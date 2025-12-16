@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class RepeatingBackground : MonoBehaviour {
@@ -16,12 +15,17 @@ public class RepeatingBackground : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void Update() {
-    
+    void Update() 
+    {
+        if (transform.position.x < -groundHorizontalLength)
+        {
+            RepositionBackground ();
+        }
     }
+
     private void RepositionBackground()
     {
-        vector
+        Vector2 groundOffset = new Vector2 (groundHorizontalLength = 2f, 0);
+        transform.position = (Vector2)transform.position + groundOffset;
     }
-    
 }
